@@ -5,19 +5,19 @@ news: # 公告
     icon: fas fa-bullhorn fa-fw # fas fa-exclamation-triangle
     title: 本站公告
   rows:
-    - name: "博主: Wang QingBin"
+    - name: "博主: 大泡泡"
       icon: fab fa-github  # fas fa-info-circle 
-      url: https://github.com/wongqingbin
+      url: https://github.com/bubblewu
     # - name: 升级小助手
     #   icon: fas fa-angle-double-up
     #   url: /v2/getting-started/#升级小助手
 
-group-adb:
-  class: group
-  display: [desktop, mobile] # [desktop, mobile]
-  header:
-    icon: fas fa-list-alt
-    title: Android SDK
+#group-adb:
+#  class: group
+#  display: [desktop, mobile] # [desktop, mobile]
+#  header:
+#    icon: fas fa-list-alt
+#    title: Android SDK
 
 # 通用文本部件
 # repos:
@@ -33,22 +33,22 @@ group-adb:
 #     - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/valuex/logo.png" height="50px">](https://github.com/xaoxuu/ValueX)'
 #     - '[<img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/proj/inspire/logo.png" height="50px">](https://github.com/xaoxuu/Inspire)'
 
-# 通用网格部件
-feedback:
-  class: grid
-  display: [desktop, mobile]
-  header:
-    icon: fas fa-headset
-    title: 联系开发者
-    url: https://github.com/xaoxuu/hexo-theme-volantis
-  fixed: true # 固定宽度
-  rows:
-    - name: 反馈BUG
-      icon: fas fa-bug
-      url: https://github.com/xaoxuu/hexo-theme-volantis/issues/
-    - name: 疑问求助
-      icon: fas fa-question-circle
-      url: https://github.com/xaoxuu/hexo-theme-volantis/issues/
-    - name: 提个建议
-      icon: fas fa-lightbulb
-      url: https://github.com/xaoxuu/hexo-theme-volantis/issues/
+## 通用网格部件
+#feedback:
+#  class: grid
+#  display: [desktop, mobile]
+#  header:
+#    icon: fas fa-headset
+#    title: 联系开发者
+#    url: https://github.com/xaoxuu/hexo-theme-volantis
+#  fixed: true # 固定宽度
+#  rows:
+#    - name: 反馈BUG
+#      icon: fas fa-bug
+#      url: https://github.com/xaoxuu/hexo-theme-volantis/issues/
+#    - name: 疑问求助
+#      icon: fas fa-question-circle
+#      url: https://github.com/xaoxuu/hexo-theme-volantis/issues/
+#    - name: 提个建议
+#      icon: fas fa-lightbulb
+#      url: https://github.com/xaoxuu/hexo-theme-volantis/issues/

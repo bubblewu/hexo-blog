@@ -104,8 +104,7 @@ style:
 
 
 
-
-############################### Layout ###############################
+############################### 设置封面 ###############################
 cover:
   scheme: docs # docs, blog
   display:
@@ -117,31 +116,36 @@ cover:
   subtitle: '记录平时工作过程中的学习点滴'
   search: # search bar placeholder
   features:
+    - name: 文章
+      icon: fas fa-rss
+      url: /
     - name: 分类
       icon: fas fa-folder-open
       url: categories/
     - name: 标签
       icon: fas fa-tags
       url: tags/
-    - name: 归档
+    - name: 时间轴
       icon: fas fa-archive
       url: archives/
     - name: 源码
       icon: fas fa-file-code
-      url: https://github.com/wongqingbin/blog
+      url: https://github.com/bubblewu/hexo-blog
       rel: external nofollow noopener noreferrer
       target: _blank
-    - name: 鸣谢
-      icon: fas fa-handshake
-      url: contributors/
+#    - name: 鸣谢
+#      icon: fas fa-handshake
+#      url: contributors/
 
 
-# Navigation Bar
+# 设置导航栏
+# 导航栏分为 logo、menu、search 三个区域设置，
+# 其中 logo 区域如果设置了图片，则不能显示图标和标题， menu 区域的设置可以写在一个单独的文件中。
 navbar:
   logo: # choose [img] or [icon + title]
     img:
-    icon: https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png
-    title: Frieza
+    icon:
+    title: Bubble
   menu:
     # The following can be written in `blog/source/_data/menu.yml`
     - name: 博客
@@ -153,19 +157,27 @@ navbar:
     - name: 标签
       icon: fas fa-tags
       url: tags/
-    - name: 归档
+    - name: 时间轴
       icon: fas fa-archive
       url: archives/
-    - name: 友链
-      icon: fas fa-link
-      url: friends/
+#    - name: 友链
+#      icon: fas fa-link
+#      url: friends/
     - name: 关于
       icon: fas fa-info-circle
       url: about/
   search: Search...   # Search bar placeholder
 
 
-
+  # 模块化布局
+  # 可以自由决定每个页面是否显示侧边栏，侧边栏显示什么小部件，正文区域显示什么卡片，文章卡片显示什么 meta 信息
+  # 其中 meta 部分的取值自 meta 库， 其余部分取值自 widget 库，
+  #（ body 除了可以从 widget 库中取值外，还可以选择 article 和 comments ）。
+  # - meta 库：
+  # meta 即文章的元数据，描述文章的作者、发布时间、更新时间等等信息，Volantis 不替您决定，显示什么图标、如何描述都可以自定义。
+  # - widget 库：
+  # widget即小部件，大部分小部件都可以放置在侧边栏，一部分已经为正文区域显示做了优化，还有一部分只可以放置在文章页脚部分。
+  # 与 meta 库不同的是：除了现有的 widget ，您可以很轻易地创建自己的 widget ，然后放在需要的地方。此外，您还可以将 widget 写在单独的文件中。
 layout:
   # The following can be written in `blog/source/_data/layout.yml`
   # 文章列表（主页、自定义的列表）布局
@@ -175,7 +187,7 @@ layout:
     # 列表类页面的侧边栏
     sidebar: [blogger, category, tagcloud, qrcode]
     # read more button
-    readmore: Read More <i class="fas fa-chevron-right"></i>
+    readmore: 阅读全文 <i class="fas fa-chevron-right"></i>
   # 页面布局
   on_page:
     # 文章页面主体元素，你也可以在页面的Front-matter中设置
@@ -196,14 +208,16 @@ layout:
 
 
 # meta library
+# - meta 库：
+# meta 即文章的元数据，描述文章的作者、发布时间、更新时间等等信息，Volantis 不替您决定，显示什么图标、如何描述都可以自定义。
 meta:
   # 文章标题
   title: # 暂无配置
   # 默认文章作者（可在front-matter中覆盖）
   author:
-    avatar: https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png
-    name: Wang QingBin
-    url: https://github.com/wongqingbin
+    avatar: /images/bubble.png
+    name: 大泡泡
+    url: https://bubblewu.github.io/
   # 文章创建日期
   date:
     icon: fas fa-calendar-alt
@@ -274,22 +288,40 @@ meta:
       color: '#1BCDFC'
 
 # widget library
+# - widget 库：
+# widget即小部件，大部分小部件都可以放置在侧边栏，一部分已经为正文区域显示做了优化，还有一部分只可以放置在文章页脚部分。
+# 与 meta 库不同的是：除了现有的 widget ，您可以很轻易地创建自己的 widget ，然后放在需要的地方。此外，您还可以将 widget 写在单独的文件中。
+
+# 每一个小部件都有 class 和 display，前者代表这个小部件是什么，后者代表这个小部件在什么桌面和移动平台中是否显示，
+# 如果在移动平台显示，由于屏幕宽度有限，侧边栏的小部件则会被移动到正文区域下方，因此部分侧边栏小部件便失去意义，建议设置为仅桌面端显示。
+# 小部件名:
+# class: 小部件类别
+# display: [小部件在桌面端显示, 小部件在移动设备显示]
+
 widget:
   # The following can be written in `blog/source/_data/widget.yml`
   # ---------------------------------------
-  # blogger info widget
+  # 博主信息部件
+  # 今日诗词 jinrishici 如果设置为一个字符串，这个字符串会变成占位文字，加载失败时显示。
+  # 如果不需要，就请设置为 jinrishici: false。
+  # social 的具体内容请在网站页脚部分设置。
   blogger:
     class: blogger
     display: [desktop, mobile] # [desktop, mobile]
-    avatar: https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png
+    avatar: /images/bubble.png
     shape: rectangle # circle, rectangle
     url: /about/
     title:
     subtitle:
-    jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
-    social: false # social 的具体内容请在网站页脚部分设置(false图片下方不显示页脚)
+    jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+    social: true # social 的具体内容请在网站页脚部分设置(false图片下方不显示页脚)
   # ---------------------------------------
   # toc widget (valid only in articles)
+  # 文章目录部件 toc widget (valid only in articles)
+  # 这个部件只能放置在侧边栏，并且在文章中有效。
+  # 在移动设备中预览时，手指向上滑动时，导航栏右边会出现 TOC 按钮，点击即可展开 TOC 部件。
+  # 如果您需要显示章节序号，请设置 list_number。
+  # min_depth 和 max_depth 代表 TOC 支持的标题层级，最大范围是2～6。
   toc:
     class: toc
     display: [desktop, mobile] # [desktop, mobile]
@@ -301,6 +333,8 @@ widget:
     max_depth: 5
   # ---------------------------------------
   # category widget
+  # 文章分类部件：这个部件可以直接显示所有文章分类。
+  # 如果您希望有一个独立的页面来展示，需要自己创建一个文件，具体操作在「页面」部分文档中。
   category:
     class: category
     display: [desktop] # [desktop, mobile]
@@ -310,6 +344,8 @@ widget:
       url: /blog/categories/
   # ---------------------------------------
   # tagcloud widget
+  # 标签云部件：这个部件可以直接显示所有文章的标签。
+  # 如果您希望有一个独立的页面来展示，需要自己创建一个文件，具体操作在「页面」部分文档中。
   tagcloud:
     class: tagcloud
     display: [desktop, mobile] # [desktop, mobile]
@@ -324,6 +360,9 @@ widget:
     end_color: '#555'
   # ---------------------------------------
   # related posts widget
+  # 相关文章部件
+  # 这个小部件建议放置在文章页脚，要使用这个部件，您需要安装插件：npm i -S hexo-related-popular-posts
+  # 值得注意的是，开启了这个功能之后，每次修改文章内容包括 front-matter 之后，都需要重新 hexo s。
   related_posts:
     class: related_posts # npm i -S hexo-related-popular-posts
     display: [desktop, mobile] # [desktop, mobile]
@@ -333,6 +372,7 @@ widget:
     max_count: 5
   # ---------------------------------------
   # copyright widget (valid only in articles)
+  # 文章版权部件：这个部件只可以放置在文章页脚。
   copyright:
     class: copyright
     display: [desktop, mobile] # [desktop, mobile]
@@ -342,7 +382,17 @@ widget:
       - '博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议'
       - permalink
   # ---------------------------------------
+  # 二维码部件：您可以放置在文章页脚用于展示打赏图片，也可以放置在侧边栏。
+  donate:
+    class: qrcode
+    display: [desktop, mobile] # [desktop, mobile]
+    height: 300px  # Automatic height if not set
+    fancybox: true
+    images:
+      - images/pay.jpeg
+  # ---------------------------------------
   # qrcode widget
+  # 二维码部件：您可以放置在文章页脚用于展示打赏图片，也可以放置在侧边栏。
   qrcode: # 二维码手机观看
     class: qrcode
     display: [desktop] # [desktop, mobile]
@@ -352,9 +402,15 @@ widget:
     height: #64px  # Automatic height if not set
     fancybox: #true
     images:
-      - https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/github.io.png
+      - /images/web.png
   # ---------------------------------------
   # references widget
+  # 参考资料部件
+  # 这个部件的布局继承自 list 部件，用于展示文章的参考资料。请将您的 Volantis 升级至 2.5 版本以上使用。
+  # 在文章的 front-matter 中设置：
+  # references:
+  #   - name: Apple Developer Documentation
+  #     url: https://developer.apple.com/documentation/
   references:
     class: references # is subclass of list
     display: [desktop, mobile] # [desktop, mobile]
@@ -371,7 +427,14 @@ widget:
   # class: text, list, grid, qrcode, page, ... see more at https://volantis.js.org/
 
 
-
+# 设置网站页脚
+# 其中，aplayer 需要在插件部分设置中启用。您可以新增文字属性，用于展示其它文字信息，例如：
+# footer:
+# layout: [..., br, hello, ...]
+# ...
+# # You can add your own property here. (Support markdown, for example: br: '<br>')
+# br: '<br>'
+# hello: '[Hello World](/)'
 footer:
   # layout of footer: [aplayer, social, license, info, copyright]
   layout: [social, info, copyright] # aplayer, license, info,
@@ -379,17 +442,18 @@ footer:
     # - icon: fas fa-rss
     #   url: atom.xml
     - icon: fas fa-envelope
-      url: 714227638@qq.com
+      url: mailto:752820344@qq.com
     - icon: fab fa-github
-      url: https://github.com/wongqingbin
+      url: https://github.com/bubblewu
     # - icon: fas fa-headphones-alt
     #   url: https://music.163.com/#/user/home?id=63035382
-  copyright: "[Copyright © 2020  Wang QingBin](https://github.com/wongqingbin)"
+  copyright: '[Copyright © 2020-2222 Bubble](https://bubblewu.github.io/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
   br: "<br>"
 
 
 ############################### SEO ###############################
+# 这部分一般不需要修改
 seo:
   # When there are no keywords in the article's front-matter, use tags as keywords.
   use_tags_as_keywords: true
@@ -405,6 +469,8 @@ seo:
 
 
 ############################### Plugins ###############################
+# Volantis 为丰富的插件提供了兼容性优化。大部分插件您只需开启和关闭，无需进行设置。
+
 plugins:
   ######## Plugins to improve loading speed:
   # Preload (The menu's url must end with ‘/’)
@@ -440,6 +506,7 @@ plugins:
   busuanzi: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
 
   # npm i --save hexo-wordcount
+  # 文章字数统计、阅读时长，开启需要安装插件: npm i --save hexo-wordcount
   wordcount: true
 
   ######## Plugins for ...
@@ -452,6 +519,7 @@ plugins:
   comment_typing: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js
 
   # Slide Background
+  # 幻灯片背景图片显示的位置可以选择粘贴在封面上，跟随封面一起滑动，也可以选择固定作为网页背景图片。
   backstretch:
     enable: true
     js: https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js
@@ -460,8 +528,8 @@ plugins:
     duration: 20000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg
-      - https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/background.jpeg
+      - https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg
+      - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/B18FCBB3-67FD-48CC-B4F3-457BA145F17A.jpeg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/35F12181-F0E9-45BD-B134-37E4B4A660CF.jpeg
       # - https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/00E0F0ED-9F1C-407A-9AA6-545649D919F4.jpeg
@@ -476,7 +544,7 @@ plugins:
   # APlayer is only available in mainland China.
   # APlayer config: https://github.com/metowolf/MetingJS
   aplayer:
-    enable: true
+    enable: false
     js:
       - https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js
       - https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
@@ -501,57 +569,59 @@ plugins:
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
-  service: valine # valine, minivaline, disqus, gitalk, livere
-  valine:
-    appId: dogUA2FSKGTo029M1SEwGROT-MdYXbMMI # your appId
-    appKey: u0NdtQ8nvHoMdJPSYqm1LRxE # your appKey
-    js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
-    path: # All pages use the same path (share the same comments data)
-    meta: nick,mail,link # valine comment header info
-    requiredFields: ['nick','mail']
-    enableQQ: true # Unstable avatar link
-    placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
-    avatar: robohash # gravatar style https://valine.js.org/avatar
-    pageSize: 10 # comment list page size
-    lang: zh-cn
-    highlight: true
-    visitor: true
-    mathJax: false
-  # MiniValine
-  # See: https://github.com/MiniValine/MiniValine
-  minivaline:
-    appId: # Your leancloud application appid
-    appKey: # Your leancloud application appkey
-    js: https://unpkg.com/minivaline@latest/dist/MiniValine.min.js
-    placeholder: Write a Comment # Comment box placeholder
-    path: # All pages use the same path (share the same comments data)
-    adminEmailMd5: # The MD5 of Admin Email to show Admin Flag.
-    math: true # Support MathJax.
-    md: true # Support Markdown.
-    # MiniValine's display language depends on user's browser or system environment
-    # If you want everyone visiting your site to see a uniform language, you can set a force language value
-    # Available values: en  | zh-CN | (and many more)
-    # More i18n info: https://github.com/MiniValine/minivaline-i18n
-    lang:
-    NoRecordIP: false # Do not record commenter IP.
-    maxNest: 6 # Sub-comment maximum nesting depth.
-    pageSize: 6 # Pagination size.
-    # Expression Url.
-    # https://github.com/MiniValine/MiniValine/blob/master/.github/FAQ.md#how-to-customize-emoticons
-    emoticonUrl:
-      - https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@master
-      - https://cdn.jsdelivr.net/npm/alus
-
-  disqus:
-    shortname:
+  service: gitalk # valine, minivaline, disqus, gitalk, livere
+#  valine:
+#    appId: dogUA2FSKGTo029M1SEwGROT-MdYXbMMI # your appId
+#    appKey: u0NdtQ8nvHoMdJPSYqm1LRxE # your appKey
+#    js: https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js
+#    path: # All pages use the same path (share the same comments data)
+#    meta: nick,mail,link # valine comment header info
+#    requiredFields: ['nick','mail']
+#    enableQQ: true # Unstable avatar link
+#    placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
+#    avatar: robohash # gravatar style https://valine.js.org/avatar
+#    pageSize: 10 # comment list page size
+#    lang: zh-cn
+#    highlight: true
+#    visitor: true
+#    mathJax: false
+#  # MiniValine
+#  # See: https://github.com/MiniValine/MiniValine
+#  minivaline:
+#    appId: # Your leancloud application appid
+#    appKey: # Your leancloud application appkey
+#    js: https://unpkg.com/minivaline@latest/dist/MiniValine.min.js
+#    placeholder: Write a Comment # Comment box placeholder
+#    path: # All pages use the same path (share the same comments data)
+#    adminEmailMd5: # The MD5 of Admin Email to show Admin Flag.
+#    math: true # Support MathJax.
+#    md: true # Support Markdown.
+#    # MiniValine's display language depends on user's browser or system environment
+#    # If you want everyone visiting your site to see a uniform language, you can set a force language value
+#    # Available values: en  | zh-CN | (and many more)
+#    # More i18n info: https://github.com/MiniValine/minivaline-i18n
+#    lang:
+#    NoRecordIP: false # Do not record commenter IP.
+#    maxNest: 6 # Sub-comment maximum nesting depth.
+#    pageSize: 6 # Pagination size.
+#    # Expression Url.
+#    # https://github.com/MiniValine/MiniValine/blob/master/.github/FAQ.md#how-to-customize-emoticons
+#    emoticonUrl:
+#      - https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@master
+#      - https://cdn.jsdelivr.net/npm/alus
+#
+#  disqus:
+#    shortname:
   gitalk:
-    clientID:
-    clientSecret:
-    repo:
-    owner:
-    admin: # []
-  livere:
-    uid:
+    enable: true
+    id: location.pathname
+    clientID: 9c3ba30f68564e88ff5a
+    clientSecret: 96fdc1643060dc0b177fa05627e83eaba08781d8
+    repo: hexo-blog
+    owner: bubblewu
+    admin: ['bubblewu'] # []
+#  livere:
+#    uid:
 
 
 
@@ -559,6 +629,7 @@ comments:
 ############################### Search ###############################
 # To use hexo search, you need to install the following plugins:
 # npm i -S hexo-generator-search hexo-generator-json-content
+# 开启搜索功能
 search:
   enable: true
   service: hexo  # hexo, google, algolia, azure, baidu

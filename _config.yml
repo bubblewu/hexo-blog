@@ -194,10 +194,14 @@ deploy:
   branch: master
   message: "Github CI Auto Builder at {{ now('YYYY-MM-DD HH:mm:ss Z') }}"
 
-gitalk:
-  on: true
-  owner: bubblewu
-  repo: bubblewu.github.io
-  admin: ['bubblewu']
-  clientID: 6614fcb178f2bc9c0d01
-  clientSecret: 07110196d5a176b12c9c30d2d4c1d6a362dd0df7
+#gitalk:
+#  enable: true
+#  id: location.pathname
+#  owner: bubblewu
+##  repo: bubblewu.github.io
+#  admin: ['bubblewu']
+##  clientID: 6614fcb178f2bc9c0d01
+##  clientSecret: 07110196d5a176b12c9c30d2d4c1d6a362dd0df7
+#  clientID: 9c3ba30f68564e88ff5a
+#  clientSecret: 96fdc1643060dc0b177fa05627e83eaba08781d8
+#  repo: hexo-blog

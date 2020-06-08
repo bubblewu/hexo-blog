@@ -3,18 +3,19 @@
 - name: 主页
   icon: fas fa-home fa-fw  # fas fa-flag
   url: /
-- name: 系列文章
-  icon: fas fa-book fa-fw
-  rows:
-    - name: Android SDK
-      url: adb/
-      icon: fas fa-file-alt fa-fw
-    - name: Python
-      # url:
-      icon: fas fa-file-alt fa-fw
-    - name: Jmeter
-      # url:
-      icon: fas fa-file-alt fa-fw
+#- name: 系列文章
+#  icon: fas fa-book fa-fw
+#  rows:
+#    - name: Android SDK
+#      url: adb/
+#      icon: fas fa-file-alt fa-fw
+#    - name: Python
+#      # url:
+#      icon: fas fa-file-alt fa-fw
+#    - name: Jmeter
+#      # url:
+#      icon: fas fa-file-alt fa-fw
+    
 - name: 分类
   icon: fas fa-folder-open
   url: categories/
@@ -30,17 +31,13 @@
     - name: 关于小站
       url: about/
       icon: fas fa-info-circle
-    - name: GitHub图床
-      url: https://github.com/wongqingbin/PicGo
-      icon: fab fa-github
-      target: _blank
     - name: 博客源码
-      url: https://github.com/wongqingbin/blog
+      url: https://github.com/bubblewu/hexo-blog
       icon: fab fa-github
       target: _blank
-    - name: 留言板
-      icon: fas fa-question-circle fa-fw
-      url: msgboard/
-    - name: 友情链接
-      # url: friends/ # 无url的为不可点击项
-      icon: fas fa-link
+#    - name: 留言板
+#      icon: fas fa-question-circle fa-fw
+#      url: msgboard/
+#    - name: 友情链接
+#      # url: friends/ # 无url的为不可点击项
+#      icon: fas fa-link
