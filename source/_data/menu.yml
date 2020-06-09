@@ -35,6 +35,9 @@
       url: https://github.com/bubblewu/hexo-blog
       icon: fab fa-github
       target: _blank
+    - name: 鸣谢
+      icon: fas fa-handshake
+      url: contributors/
 #    - name: 留言板
 #      icon: fas fa-question-circle fa-fw
 #      url: msgboard/

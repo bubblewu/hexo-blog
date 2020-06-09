@@ -133,9 +133,6 @@ cover:
       url: https://github.com/bubblewu/hexo-blog
       rel: external nofollow noopener noreferrer
       target: _blank
-#    - name: 鸣谢
-#      icon: fas fa-handshake
-#      url: contributors/
 
 
 # 设置导航栏
@@ -215,7 +212,7 @@ meta:
   title: # 暂无配置
   # 默认文章作者（可在front-matter中覆盖）
   author:
-    avatar: /images/bubble.png
+    avatar: https://cdn.jsdelivr.net/gh/bubblewu/cdn/images/bubble.png
     name: 大泡泡
     url: https://bubblewu.github.io/
   # 文章创建日期
@@ -246,14 +243,14 @@ meta:
     icon: fas fa-hashtag
   # 分享
   share:
-    # - id: qq
-    #   img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png
-  #   - id: qzone
-  #     img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png
-  #   - id: weibo
-  #     img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png
+    - id: qq
+      img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png
+    - id: qzone
+      img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png
+    - id: weibo
+      img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png
     - id: qrcode # 当id为qrcode时需要安装插件  npm i -S hexo-helper-qrcode
-      img: https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/blog/wechat.png  # https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png
+      img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png
     # - id: telegram
     #   img: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/telegram.png
   # 链接
@@ -308,7 +305,7 @@ widget:
   blogger:
     class: blogger
     display: [desktop, mobile] # [desktop, mobile]
-    avatar: /images/bubble.png
+    avatar: https://cdn.jsdelivr.net/gh/bubblewu/cdn/images/bubble.png
     shape: rectangle # circle, rectangle
     url: /about/
     title:
@@ -389,7 +386,8 @@ widget:
     height: 300px  # Automatic height if not set
     fancybox: true
     images:
-      - images/pay.jpeg
+      - https://cdn.jsdelivr.net/gh/bubblewu/cdn/images/pay.jpeg
+#      - images/pay.jpeg
   # ---------------------------------------
   # qrcode widget
   # 二维码部件：您可以放置在文章页脚用于展示打赏图片，也可以放置在侧边栏。
@@ -402,7 +400,7 @@ widget:
     height: #64px  # Automatic height if not set
     fancybox: #true
     images:
-      - /images/web.png
+      - https://cdn.jsdelivr.net/gh/bubblewu/cdn/images/blog-web.png
   # ---------------------------------------
   # references widget
   # 参考资料部件

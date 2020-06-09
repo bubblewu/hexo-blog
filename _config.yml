@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 工作见闻录
+title: 大泡泡的笔记
 subtitle: 记录平时工作过程中的学习点滴
 description: Java、Python、机器学习、深度学习、推荐系统、自然语言处理
 keywords: Java、Python、机器学习、深度学习、推荐系统、自然语言处理
@@ -15,7 +15,7 @@ timezone: Asia/Shanghai
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 #url: http://yoursite.com
-url: http://localhost:4000 #https://bubblewu.github.io/
+url: https://bubblewu.github.io/ #http://localhost:4000 #https://bubblewu.github.io/
 root: /
 permalink: :id/  # :category/:id/ # :year/:month/:day/:title/
 permalink_defaults:
@@ -110,6 +110,7 @@ ignore:
 theme: volantis
 # 网站图标，更多尺寸等图标请使用import方式批量导入
 favicon: https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/favicon.ico
+#https://cdn.jsdelivr.net/gh/bubblewu/cdn/images/bubble.png
 import:  # 全局导入
   meta:
   - "<meta name='theme-color' content='#FFFFFF'>"
@@ -126,21 +127,21 @@ import:  # 全局导入
 # 开启cdn加速cdn.jsdelivr.net
 use_cdn: true # 启用cdn后暗黑模式无法使用
 
-#offline:  # npm i hexo-offline --save
-#  maximumFileSizeToCacheInBytes: 10485760
-#  staticFileGlobs:
-#    - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
-#  stripPrefix: public
-#  verbose: true
-#  runtimeCaching:
-#    - urlPattern: /*
-#      handler: cacheFirst
-#      options:
-#        origin: cdn.jsdelivr.net
-#    - urlPattern: /*
-#      handler: cacheFirst
-#      options:
-#        origin: cdnjs.cloudflare.com
+offline:  # npm i hexo-offline --save
+  maximumFileSizeToCacheInBytes: 10485760
+  staticFileGlobs:
+    - public/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,woff2}
+  stripPrefix: public
+  verbose: true
+  runtimeCaching:
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: cdn.jsdelivr.net
+    - urlPattern: /*
+      handler: cacheFirst
+      options:
+        origin: cdnjs.cloudflare.com
 
 # 图片懒加载
 # lazyload:  npm install hexo-lazyload-image --save  hexo-fs
