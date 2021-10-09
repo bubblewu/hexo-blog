@@ -112,7 +112,7 @@ cover:
     archive: false # 控制归档页面(时间轴页面) 是否显示cover
     others: false # can be written in front-matter 'cover: true'
 #  logo: https://cdn.jsdelivr.net/gh/wongqingbin/PicGo/myhead.png # https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/256/google_logo.png
-  title: 好记性不如烂笔头
+  title: BKB知识库
   subtitle: '记录平时工作过程中的学习点滴'
   search: # search bar placeholder
   features:
