@@ -53,3 +53,10 @@ hexo new page -p about/me "about me"
 # source/ 为主目录，page不可省略
 ```
 
+## 添加新文章部署步骤
+```
+进入项目，并选择存放文件目录：cd /Users/xxx/env/hexo/hexo-blog/source/_posts/Java/并发
+生成静态页面至public目录：hexo generate
+开启预览访问端口（默认端口4000，'ctrl + c'关闭server）：hexo server
+部署到github：hexo deploy
+```
